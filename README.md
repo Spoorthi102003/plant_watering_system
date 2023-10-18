@@ -232,10 +232,34 @@ Mapping those gates to actual technology-dependent logic gates available in the 
 Optimizing the mapped netlist keeping the constraints set by the designer intact.
 In this step we Make use of the Yosys tool to generate a Netlist, this Netlist is later run using the iverilog where the ".net" and the testbench file which give us again an executable file a.out.
 
-Go to verilog_files directory and type yosys
+Go to verilog_files directory and type `yosys`
+![Screenshot 2023-10-18 174838](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/2bb558b6-8056-4ebf-8cdf-9cf35d0f9398)
 
+Type the following commands:
+```
+ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+ read_verilog pes_plant_watering.v
+ synth -top pes_plant_watering
+```
+After running the synthesis it gives us the statistics as shown below:
 
+![Screenshot 2023-10-16 183741](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/1571e2aa-178a-4023-8e04-9700aaf0ec81)
 
+Here are the number of components used in making plant_watering_system
+
+To view the netlist we type the following commands:
+```
+ abc -liberty -lib ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+ show
+```
+
+![Screenshot 2023-10-17 194624](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/3f7fc533-0e22-457f-af19-4c0fff29514e)
+
+Now to get the .net file, we type the following commands:
+```
+write_verilog pes_plant_watering_net.v
+!vim pes_plant_watering_net.v
+```
 
 
 

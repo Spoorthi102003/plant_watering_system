@@ -260,8 +260,13 @@ Now to get the .net file, we type the following commands:
 write_verilog pes_plant_watering_net.v
 !vim pes_plant_watering_net.v
 ```
+![Screenshot 2023-10-18 175732](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/37d99aeb-7b63-4da9-9b78-358a2b76381c)
 
-
+To make the given netlist code even more simpler and small give the following commands:
+```
+write_verilog -noattr pes_plant_watering_net.v
+!vim pes_plant_watering_net.v
+```
 
 
 

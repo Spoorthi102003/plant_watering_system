@@ -113,14 +113,126 @@ endmodule
 Go to the following directory and create two ".v" files
 ![Screenshot 2023-10-18 171830](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/082873d9-4d8d-42df-85fa-6cfdda89358d)
 
+1. "**pes_plant_watering.v**"
+Verilog code for plant watering system as a Mealy state machine is given below:
+```
+module pes_plant_watering (
+    input wire clk,         // Clock input
+    input wire rst,         // Reset input
+    input wire moisture_sensor, // Moisture sensor input
+    output wire water_pump  // Water pump control output
+);
+
+reg [1:0] state;
+
+// Define module-level parameters
+parameter IDLE = 2'b00;
+parameter WATER = 2'b01;
+
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        state <= IDLE;
+    end else begin
+        case(state)
+            IDLE: begin
+                if (moisture_sensor == 1'b0) begin
+                    state <= WATER;
+                end
+            end
+            WATER: begin
+                if (moisture_sensor == 1'b1) begin
+                    state <= IDLE;
+                end
+            end
+            default: state <= IDLE;
+        endcase
+    end
+end
+
+assign water_pump = (state == WATER);
+
+endmodule
+```
+  ![Screenshot 2023-10-16 181320](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/e0d6255a-ef08-4c96-a115-ae4db92f456f)
+
+2. "**pes_plant_watering_tb.v**"
+The testbench code:
+```
+module pes_plant_watering_tb;
+
+    reg clk;
+    reg rst;
+	 reg moisture_sensor;
+
+    wire water_pump;
+
+    pes_plant_watering uut (
+        .clk(clk), 
+        .rst(rst),
+		  .moisture_sensor(moisture_sensor) ,
+        .water_pump(water_pump)
+    );
+
+    
+    initial clk = 0; 
+    always #10 clk = ~clk; 
+
+    initial begin
+    
+        rst = 1; 
+        #50;       
+        rst = 0;
+		  moisture_sensor=0;
+		  #10; 
+		  moisture_sensor=0;
+		  #10;
+		  moisture_sensor=1; 
+    end
+    initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
+    end
+      
+endmodule
+```
+
+  ![Screenshot 2023-10-16 181414](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/2e8e7300-7cd7-4818-9e38-09d0f32632af)
 
 
+Once we have created our testbench files and the main files, we implement this in our simulation tool iVerilog.
 
+In the `verilog_files` directory, give the following commands:
+```
+iverilog pes_plant_watering.v pes_plant_watering_tb.v
+ls
+```
+We can see that an a.out executable file is created
+![Screenshot 2023-10-18 173439](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/b3c0ece1-04d9-4847-9ebb-7f7f3c30bf0c)
 
+Now we  execute the file 'a.out' by giving the following command:
+```
+./a.out
+```
+./a.out executes and we get a dump.vcd file. We run this dump.vcd file in GTK wave using the following command:
+```
+gtkwave dump.vcd
+```
 
+**Pre-Synthesis simulation results**
+![Screenshot 2023-10-17 194308](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/7c036c4d-c8c9-4266-a0b1-d1db828c63ed)
 
+# RTL synthesis
 
+Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates.
 
+Synthesis takes place in multiple steps:
+
+Converting RTL into simple logic gates.
+Mapping those gates to actual technology-dependent logic gates available in the technology libraries.
+Optimizing the mapped netlist keeping the constraints set by the designer intact.
+In this step we Make use of the Yosys tool to generate a Netlist, this Netlist is later run using the iverilog where the ".net" and the testbench file which give us again an executable file a.out.
+
+Go to verilog_files directory and type yosys
 
 
 

@@ -277,7 +277,7 @@ To use the iVerilog, we give the following commands as shown below:
 ```
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_plant_watering_net.v pes_plant_watering_tb.v
 ```
-as we see again we have generated an executable file a.out to generate the waveform in gtkwave we execute the a.out file.
+As we see again we have generated an executable file a.out to generate the waveform in gtkwave we execute the a.out file.
 
 To view in gtkwave, 
 ```
@@ -287,6 +287,6 @@ gtkwave dump.vcd
 ![Screenshot 2023-10-17 195446](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/51848ef0-eab4-4122-9031-8b8359b6fc38)
 
 
-We see that the output waveform are in accordance with the testbench written
+We see that the output waveform are in accordance with the testbench written.
 
 

@@ -267,16 +267,26 @@ To make the given netlist code even more simpler and small give the following co
 write_verilog -noattr pes_plant_watering_net.v
 !vim pes_plant_watering_net.v
 ```
+![Screenshot 2023-10-18 180300](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/08d0c0ba-968a-47cd-99ec-edb303b5c860)
+
+# GLS(Gate Level Simulation)
+
+In this step we do the GLS(gate level simulation) we take the netlist file generated ".net" and the testbench file that we had written for our plant watering system at the starting and again use the iVerilog tool to generate the waveform for GLS.
+
+To use the iVerilog, we give the following commands as shown below:
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_plant_watering_net.v pes_plant_watering_tb.v
+```
+as we see again we have generated an executable file a.out to generate the waveform in gtkwave we execute the a.out file.
+
+To view in gtkwave, 
+```
+gtkwave dump.vcd
+```
+
+![Screenshot 2023-10-17 195446](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/51848ef0-eab4-4122-9031-8b8359b6fc38)
 
 
-
-
-
-
-
-
-
-
-
+We see that the output waveform are in accordance with the testbench written
 
 

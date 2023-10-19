@@ -3,13 +3,13 @@
 ## INTRODUCTION
 Digital circuits can be classified as sequential and combinational crcuits
 * **Combinational Circuits**:
-  *Combinational circuits have no memory elements, such as flip-flops or latches.
-  *The output of a combinational circuit depends only on the current inputs, with no regard for     past input values.
-  *Examples include logic gates (AND, OR, XOR, etc.), multiplexers, and decoders.
+  * Combinational circuits have no memory elements, such as flip-flops or latches.
+  * The output of a combinational circuit depends only on the current inputs, with no regard for past input values.
+  * Examples include logic gates (AND, OR, XOR, etc.), multiplexers, and decoders.
 * **Sequential Circuits**:
-  *Sequential circuits have memory elements that store information about past inputs.
-  *The output of a sequential circuit depends on both the current inputs and the internal state     (past inputs and past state).
-  *Examples include flip-flops, registers, and counters.
+  * Sequential circuits have memory elements that store information about past inputs.
+  * The output of a sequential circuit depends on both the current inputs and the internal state     (past inputs and past state).
+  * Examples include flip-flops, registers, and counters.
   
 ## VERILOG CODE
 * Verilog is a hardware description language used for designing and simulating digital circuits. It allows engineers and designers to describe the behavior and structure of digital systems, such as integrated circuits (ICs) and field-programmable gate arrays (FPGAs). Verilog code defines how these circuits should operate, making it a crucial tool for hardware design, simulation, and verification. It is commonly used in the semiconductor industry for designing and testing complex digital systems.

@@ -286,6 +286,7 @@ gtkwave dump.vcd
 
 ![Screenshot 2023-10-17 195446](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/51848ef0-eab4-4122-9031-8b8359b6fc38)
 
+In the above diagram, during positive edage of clock, if moisture_sensor is low, then water_pump goes high until the next clk cycle. It checks the moisture_sensor again and if it high then water_pump is made low. If not it will remain in the previous state.
 
 We see that the output waveform are in accordance with the testbench written.
 

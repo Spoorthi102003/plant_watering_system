@@ -559,8 +559,48 @@ And type the command
 ```
 magic -T /home/spoorthi/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_plant_watering.def
 ```
+![Screenshot 2023-11-04 153741](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/19ffbbc2-ef62-45d6-ab2c-7989827db816)
 
-![Screenshot 2023-11-04 152548](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/83f60185-7ab0-4557-8211-094f9d5b25ed)
+![Screenshot 2023-11-04 153517](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/5c41e7f5-1817-4252-a9a4-35529b453096)
+
+![Screenshot 2023-11-04 153633](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/de9af6c0-ce5f-4a98-899b-355b3e1f06c2)
+
+# Clock Tree Synthesis
+To do clock tree synthesis:
+```
+run_cts
+```
+The reports are as given below:
+
+![Screenshot 2023-11-04 160707](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/a073e624-fea7-424b-a843-eb03f16506fa)
+
+![Screenshot 2023-11-04 160815](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/3fd66f68-c544-4639-8f16-1f82d0d53a98)
+
+![Screenshot 2023-11-04 160901](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/7cc522ec-1788-4e87-9038-b600ab33a9ec)
+
+Power report:
+![Screenshot 2023-11-04 160936](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/bdd0c614-7963-4446-ac4c-993bdb909d4f)
+
+skew report:
+![Screenshot 2023-11-04 161003](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/c3d1ac35-ef1b-408f-b0be-b3fffd5b2969)
+
+summary:
+![Screenshot 2023-11-04 161029](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/0ab566aa-e0c0-403b-a1be-24059786bdab)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

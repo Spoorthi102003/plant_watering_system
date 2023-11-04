@@ -570,6 +570,9 @@ To do clock tree synthesis:
 ```
 run_cts
 ```
+
+![Screenshot 2023-11-04 161533](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/bde33844-83d4-43b1-bd35-4e341bfa77a4)
+
 The reports are as given below:
 
 ![Screenshot 2023-11-04 160707](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/a073e624-fea7-424b-a843-eb03f16506fa)
@@ -579,20 +582,46 @@ The reports are as given below:
 ![Screenshot 2023-11-04 160901](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/7cc522ec-1788-4e87-9038-b600ab33a9ec)
 
 Power report:
+
 ![Screenshot 2023-11-04 160936](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/bdd0c614-7963-4446-ac4c-993bdb909d4f)
 
 skew report:
+
 ![Screenshot 2023-11-04 161003](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/c3d1ac35-ef1b-408f-b0be-b3fffd5b2969)
 
 summary:
+
 ![Screenshot 2023-11-04 161029](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/0ab566aa-e0c0-403b-a1be-24059786bdab)
 
+## Routing
+To run routing we give the command:
+```
+run_routing
+```
 
+![Screenshot 2023-11-04 161632](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/feb4c05e-5fe8-4a77-adeb-a451a3d98dff)
 
+To view the design:
+got to the following directory
+```
+~/Desktop/OpenLane/designs/pes_plant_watering/runs/RUN_2023.11.04_09.38.24/results/routing
+```
+Then type the following command:
+```
+magic -T /home/spoorthi/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_plant_watering.def
+```
 
+![Screenshot 2023-11-04 162116](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/f5cb1c30-2fcb-4fd6-bfca-79e3e43ec4f8)
 
+![Screenshot 2023-11-04 162303](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/e3b6587a-99e4-4d3d-9636-8c5fdb45c3a9)
 
+Power report:
 
+![Screenshot 2023-11-04 163140](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/757bda51-1011-48bb-872b-1576c4683073)
+
+Summary report:
+
+![Screenshot 2023-11-04 163043](https://github.com/Spoorthi102003/plant_watering_system/assets/143829280/55ce20fe-92b2-41cd-858e-301a199171fc)
 
 
 

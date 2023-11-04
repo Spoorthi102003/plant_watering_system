@@ -107,6 +107,7 @@ endmodule
 	
 <summary> RTL synthesis and GLS simulation </summary>
 
+
 **Tools used in RTL netlist viewing and GLS**:
 
 1. **iVerilog**: IVERILOG is a free and open-source Verilog simulation and synthesis tool. It's part of the Icarus Verilog project, which aims to provide a full-featured and high-performance Verilog simulation and synthesis environment.Icarus Verilog is a simulator tool to check the design with the help of test bench. The design is nothing but the Verilog hardware description language code which specifies the functionality. The testbench is the setup to apply stimulus to test the functionality of the design. This simulator looks for the changes to the input. Upon changes to the input, the output is evaluated.
